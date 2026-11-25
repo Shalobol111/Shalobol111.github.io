@@ -12,7 +12,7 @@ submit.disabled = false;
 if (mode === 'preview') {
   const note = document.createElement('p');
   note.className = 'preview-note';
-  note.textContent = 'Закрытый предпросмотр. Форма проверяет поля, заявки пока не отправляются.';
+  note.textContent = 'Форма проверяет поля. Чтобы оставить заявку, воспользуйтесь контактами рядом.';
   form.prepend(note);
   submit.textContent = 'Проверить форму';
 }
@@ -131,7 +131,7 @@ for (const [index, button] of stages.entries()) {
 }
 
 const dialog = document.querySelector('#legal-dialog');
-for (const link of document.querySelectorAll('a[href^="/documents/"]')) {
+for (const link of document.querySelectorAll('a[href^="/documents/"], a[href^="/dist/documents/"]')) {
   link.addEventListener('click', event => {
     event.preventDefault();
     const key = link.hash.slice(1);
